@@ -33,6 +33,18 @@ let(:json) { ActiveSupport::JSON.decode(response.body) }
 			expect(json["error"]).to eq("Auth token can't be blank, Auth secret can't be blank")
 		end
 
+		it "shows profile if token present" do
+			u = User.new(create_params_1)
+			u.save
+			xhr :get, :show, {token: u.uauth_token}, format: :json
+			expect(json["email"]).to eq("gamer@gmail.com")
+		end
+
+		it "shows profile if token present" do
+			xhr :get, :show, {token: "incorrect_token"}, format: :json
+			expect(json["error"]).to eq("profile not found")
+		end
+
 	end
 
 end

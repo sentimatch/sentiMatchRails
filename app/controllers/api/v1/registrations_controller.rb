@@ -13,4 +13,12 @@ class Api::V1::RegistrationsController < ApplicationController
   	end   	
   end
 
+  def show
+  	u = User.find_by(uauth_token: params[:token]) 
+  	if u.present?
+  		render json: u.to_json, status: :ok
+  	else
+  		render json: { error: "profile not found" }, status: :unprocessable_entity
+  	end
+  end
 end

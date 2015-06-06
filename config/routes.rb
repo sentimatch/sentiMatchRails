@@ -1,17 +1,19 @@
 Rails.application.routes.draw do
 
-
-  devise_for :users, :controllers => { :registrations => 'api/v1/registrations'}
-
   devise_scope :user do 
     post '/api/v1/sign_up', action: "create", controller: "api/v1/registrations"
+    get  '/api/v1/profile', action: "show", controller: "api/v1/registrations"
   end
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
-
+      namespace :locations do
+        get "checkedin_users", action: "index"
+        post "checkin", action: "checkin"
+      end
     end
   end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

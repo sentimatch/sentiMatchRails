@@ -37,6 +37,8 @@ gem 'has_secure_token'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "responders"
+gem 'redis'
+gem "hiredis"
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
