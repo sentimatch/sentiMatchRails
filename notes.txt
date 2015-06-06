@@ -31,3 +31,13 @@ curl -X POST http://localhost:3000/api/v1/sign_up.json \
 -F lng="12.3456" \
 -F auth_token="2200730853-0GZxXFvKPH4bmeFpw33VPSBYoP544dpr5KDuD1Y" \
 -F auth_secret="GwsWCOUW1PmbjRm5fWOrIixLqSb9QO5ENsS7DH06pWifC"
+
+
+curl -X POST http://sentimatch.herokuapp.com/api/v1/sign_up.json \
+-F email="gamer@gmail.com" \
+-F password="samplepassword" \
+-F name="Pranav Dhar" \
+-F lat="12.3456" \
+-F lng="12.3456" \
+-F auth_token="2200730853-0GZxXFvKPH4bmeFpw33VPSBYoP544dpr5KDuD1Y" \
+-F auth_secret="GwsWCOUW1PmbjRm5fWOrIixLqSb9QO5ENsS7DH06pWifC"
