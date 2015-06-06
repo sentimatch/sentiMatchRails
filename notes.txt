@@ -11,3 +11,23 @@ MY_TEXT="Call me Ishmael. Some years ago-never mind how long precisely-"\
 "it high time to get to sea as soon as I can."
 
 curl -X POST --user "dc22de8f-920e-4d19-9e69-ef61222c3749:YC9kZMdIx6ie" -H "Content-Type: text/plain"   -d "$MY_TEXT" https://gateway.watsonplatform.net/personality-insights/api/v2/profile
+
+
+curl -X POST http://sentimatch.herokuapp.com/api/v1/sign_up
+
+#This command gives errors
+curl -X POST http://localhost:3000/api/v1/sign_up.json \
+-F access_token="9f3999c497b067fe1ad83e01320723dec1db597b2d5d6865abf9ecde84bd8111" \
+-F email="temp@asdsad.com" \
+-F client_secret="3cdbfe293cc60b7e1a410e4d470b55af9ae445324c08014cc374974533984950"
+
+
+#This command succeeds
+curl -X POST http://localhost:3000/api/v1/sign_up.json \
+-F email="gamer@gmail.com" \
+-F password="samplepassword" \
+-F name="Pranav Dhar" \
+-F lat="12.3456" \
+-F lng="12.3456" \
+-F auth_token="2200730853-0GZxXFvKPH4bmeFpw33VPSBYoP544dpr5KDuD1Y" \
+-F auth_secret="GwsWCOUW1PmbjRm5fWOrIixLqSb9QO5ENsS7DH06pWifC"
