@@ -23,4 +23,10 @@ module SentiMatchRails
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end
+
+  ActionDispatch::Routing::Mapper::Scope.class_eval do
+    def merge!(*args)
+      @hash.merge!(*args)
+    end
+  end
 end

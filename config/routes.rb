@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+
+
+  devise_for :users, :controllers => { :registrations => 'api/v1/registrations'}
+
+  devise_scope :user do 
+    get '/api/v1/sign_up', action: "create", controller: "api/v1/registrations"
+  end
+
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
