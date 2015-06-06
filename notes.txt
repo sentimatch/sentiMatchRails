@@ -1,0 +1,1 @@
+curl -X POST   -H "Authorization: Basic YTI2MmZhNGMtODY4NS00OTQzLWE0ZTAtY2FjZDY0MDg2N2FiOmROVWlSTGNjWHQ3MA"   -H "Content-Type: text/plain"   -d "$MY_TEXT" https://gateway.watsonplatform.net/personality-insights/api/v2/profile
