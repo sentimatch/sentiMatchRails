@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+
+	include Concerns::Users::CheckedinUsers
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_secure_token :uauth_token

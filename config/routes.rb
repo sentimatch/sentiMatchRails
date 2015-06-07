@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       namespace :locations do
-        get "checkedin_users", action: "index"
+        get "checkedin_users", action: "checkedin_users"
         post "checkin", action: "checkin"
       end
     end
