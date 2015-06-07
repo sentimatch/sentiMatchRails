@@ -41,3 +41,22 @@ curl -X POST http://sentimatch.herokuapp.com/api/v1/sign_up.json \
 -F lng="12.3456" \
 -F auth_token="2200730853-0GZxXFvKPH4bmeFpw33VPSBYoP544dpr5KDuD1Y" \
 -F auth_secret="GwsWCOUW1PmbjRm5fWOrIixLqSb9QO5ENsS7DH06pWifC"
+
+
+curl -X POST http://sentimatch.herokuapp.com/api/v1/locations/checkin.json \
+-F token="iYD2J5Re8xZz3NtWK2FaHRNC" \
+-F location_id="1234"
+
+curl -X GET http://sentimatch.herokuapp.com/api/v1/locations/checkedin_users.json \
+-F token="iYD2J5Re8xZz3NtWK2FaHRNC" \
+-F location_id="1234"
+
+curl -X POST http://localhost:3000/api/v1/locations/checkin.json \
+-F token="9hpdpXzKR9Rd8tD54EPphYxN" \
+-F location_id="1234"
+
+curl -X GET http://localhost:3000/api/v1/locations/checkedin_users.json \
+-F token="9hpdpXzKR9Rd8tD54EPphYxN" \
+-F location_id="1234"
+
+http://sentimatch.herokuapp.com/api/v1/locations/checkedin_users.json?token=iYD2J5Re8xZz3NtWK2FaHRNC&location=1234

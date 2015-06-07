@@ -8,7 +8,7 @@ module Concerns
       def check_in(location_id)
         # $redis.hset(HASH_KEY, self.id, location_id)
         $redis.set(self.id, location_id)
-        $redis.expire(self.id, EXPIRY_TIME)
+        $redis.expire(self.id, EXPIRY_TIME.to_i)
       end
 
       module ClassMethods
